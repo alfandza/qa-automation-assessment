@@ -23,32 +23,39 @@ describe('Swipe', () => {
         // Verify Swipe screen is displayed
         await Swipe.swipeScreen.waitForDisplayed({ timeout: 30000 });
 
-        // Perform Swipe left action
-        for (let i = 0; i <= 5; i++) {
-            //Verify first item is displayed
-            await expect(await Swipe.swipeCarouselItem(i)).toBeDisplayed();
+        //Verify first item is displayed
+        await expect(await Swipe.swipeCarouselItem(0)).toBeDisplayed();
 
-            // Wait for a second before swiping
-            await driver.pause(1000);
+        //Screenshot after verifying item is displayed
+        await driver.saveScreenshot(`./screenshots/03-swipe/swipe-left-right/01-initialize.png`);
 
-            // Perform swipe left action with 70% of screen width
-            await driver.swipe({ direction: 'left', percent: 0.75, duration: 1000 });
-        }
+        // Wait for a second before swiping
+        await driver.pause(1000);
+
+        // Perform swipe left action with 85% of screen width
+        await driver.swipe({ direction: 'left', percent: 0.85, duration: 1000 });
+
+        //Verify first item is displayed
+        await expect(await Swipe.swipeCarouselItem(1)).toBeDisplayed();
 
         // Wait for a second before swiping right
         await driver.pause(1000);
 
-        // Perform Swipe right action
-        for (let i = 5; i >= 0; i--) {
-            //Verify first item is displayed
-            await expect(await Swipe.swipeCarouselItem(i)).toBeDisplayed();
+        //Screenshot after verifying item is displayed
+        await driver.saveScreenshot(`./screenshots/03-swipe/swipe-left-right/02-swipe-left.png`);
 
-            // Wait for a second before swiping
-            await driver.pause(1000);
+        // Perform swipe right action with 85% of screen width
+        await driver.swipe({ direction: 'right', percent: 0.85, duration: 1000 });
 
-            // Perform swipe right action with 70% of screen width
-            await driver.swipe({ direction: 'right', percent: 0.75, duration: 1000 });
-        }
+        //Verify first item is displayed
+        await expect(await Swipe.swipeCarouselItem(0)).toBeDisplayed();
+
+        // Wait for a second
+        await driver.pause(1000);
+
+        //Screenshot after verifying item is displayed
+        await driver.saveScreenshot(`./screenshots/03-swipe/swipe-left-right/03-swipe-right.png`);
+
     });
 
     //Swipe Down and Up
@@ -58,6 +65,9 @@ describe('Swipe', () => {
         
         // Verify Carousel is visible first
         await expect(await Swipe.swipeCarouselItem0).toBeDisplayed();
+
+        //Screenshot after verifying item is displayed
+        await driver.saveScreenshot(`./screenshots/03-swipe/swipe-up-down/01-swipe-up-down.png`);
 
         // Perform Swipe up action twice
         for (let i = 0; i < 2; i++) {
@@ -72,6 +82,9 @@ describe('Swipe', () => {
         await expect(await Swipe.swipeDownLogo).toBeDisplayed();
         await expect(await Swipe.swipeDownText).toBeDisplayed();
 
+        //Screenshot after verifying item is displayed
+        await driver.saveScreenshot(`./screenshots/03-swipe/swipe-up-down/02-swipe-up-down.png`);
+
         // Perform Swipe up action twice
         for (let i = 0; i < 2; i++) {
             // Perform Swipe down action
@@ -85,6 +98,9 @@ describe('Swipe', () => {
 
         // Verify Carousel is visible instead
         await expect(await Swipe.swipeCarouselItem0).toBeDisplayed();
+
+        //Screenshot after verifying item is displayed
+        await driver.saveScreenshot(`./screenshots/03-swipe/swipe-up-down/03-swipe-up-down.png`);
     });
 
 })

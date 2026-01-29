@@ -23,6 +23,11 @@ However, for existing project later on, we only need to do this command each
 npm install
 ```
 
+Appium needs to be started for each Mobile Automation Test
+```bash
+appium
+```
+
 ## Element locator strategy used
 
 For grabbing element locator, I use Appium Inspector to inspect the elements
