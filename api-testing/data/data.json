@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "expectedStatus": 200,
+    "description": "Valid post ID"
+  },
+  {
+    "id": 100,
+    "expectedStatus": 200,
+    "description": "Max valid ID"
+  },
+  {
+    "id": 9999,
+    "expectedStatus": 404,
+    "description": "Non-existing post ID"
+  },
+  {
+    "id": "abc",
+    "expectedStatus": 404,
+    "description": "Invalid ID type"
+  }
+]
