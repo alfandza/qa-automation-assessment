@@ -1,0 +1,163 @@
+{
+	"id": "4f13c01e-00d0-42a4-970e-37b7e4f34e20",
+	"name": "JSONPlaceholder",
+	"timestamp": "2026-01-29T08:04:06.188Z",
+	"collection_id": "29396072-bade3bec-98df-437a-b58e-925f86970d7a",
+	"folder_id": 0,
+	"environment_id": "29396072-564a15f1-2e21-4830-b76f-2a7a693831f7",
+	"totalPass": 14,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2026-01-29T08:04:02.144Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "6687a033-6642-4c02-a8a7-b47f452e27b4",
+			"name": "Get Posts",
+			"url": "https://jsonplaceholder.typicode.com/posts",
+			"time": 38,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				432,
+				44,
+				38,
+				38
+			],
+			"allTests": [
+				{},
+				{},
+				{},
+				{}
+			]
+		},
+		{
+			"id": "62fbd937-b557-43ad-a15c-92397e8bd56e",
+			"name": "Get Post By ID",
+			"url": "https://jsonplaceholder.typicode.com/posts/abc",
+			"time": 49,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code matches – Invalid ID type": true
+			},
+			"testPassFailCounts": {
+				"Status code matches – Valid post ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has required fields": {
+					"pass": 2,
+					"fail": 0
+				},
+				"Status code matches – Max valid ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code matches – Non-existing post ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code matches – Invalid ID type": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				40,
+				40,
+				46,
+				49
+			],
+			"allTests": [
+				{
+					"Status code matches – Valid post ID": true,
+					"Response has required fields": true
+				},
+				{
+					"Status code matches – Max valid ID": true,
+					"Response has required fields": true
+				},
+				{
+					"Status code matches – Non-existing post ID": true
+				},
+				{
+					"Status code matches – Invalid ID type": true
+				}
+			]
+		},
+		{
+			"id": "177a5d7c-e656-46d9-b47a-4be33f9ab334",
+			"name": "Send Post",
+			"url": "https://jsonplaceholder.typicode.com/posts",
+			"time": 250,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response body contains expected input": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Response body contains expected input": {
+					"pass": 4,
+					"fail": 0
+				}
+			},
+			"times": [
+				249,
+				249,
+				249,
+				250
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response body contains expected input": true
+				},
+				{
+					"Status code is 201": true,
+					"Response body contains expected input": true
+				},
+				{
+					"Status code is 201": true,
+					"Response body contains expected input": true
+				},
+				{
+					"Status code is 201": true,
+					"Response body contains expected input": true
+				}
+			]
+		}
+	],
+	"count": 4,
+	"totalTime": 1724,
+	"collection": {
+		"requests": [
+			{
+				"id": "6687a033-6642-4c02-a8a7-b47f452e27b4",
+				"method": "GET"
+			},
+			{
+				"id": "62fbd937-b557-43ad-a15c-92397e8bd56e",
+				"method": "GET"
+			},
+			{
+				"id": "177a5d7c-e656-46d9-b47a-4be33f9ab334",
+				"method": "POST"
+			}
+		]
+	}
+}
