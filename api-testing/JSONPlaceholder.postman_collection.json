@@ -13,7 +13,10 @@
           "listen": "test",
           "script": {
             "exec": [
-              ""
+              "// Verify expected status and request body\r",
+              "pm.test(\"Status code is 200\", () => {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
             ],
             "type": "text/javascript",
             "packages": {},
